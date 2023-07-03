@@ -7,7 +7,7 @@ with open("internet_log.txt",'w') as file:
     pass
 
 #iPerf server address
-IP_ADDR = '62.210.18.40'
+IP_ADDR = ''
 
 #In seconds
 TEST_TIME = str(10)
