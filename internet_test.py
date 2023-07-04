@@ -14,11 +14,14 @@ IP_ADDR = ''
 TEST_TIME = str(2)
 
 #In minutes 
-TEST_INTERVAL = 15
+TEST_INTERVAL = 2 
+
+#In minutes
+MAX_RUNTIME = 60*4
 
 iterator = 0
 
-while (iterator != 50):
+while (iterator*TEST_INTERVAL != MAX_RUNTIME):
     
     iterator += 1
     print("Run #: " + str(iterator))
