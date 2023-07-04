@@ -2,15 +2,16 @@ import datetime
 import os
 import subprocess
 import time
+import re
 
 with open("internet_log.txt",'w') as file:
     pass
 
 #iPerf server address
-IP_ADDR = ''
+IP_ADDR = '62.210.18.40'
 
 #In seconds
-TEST_TIME = str(10)
+TEST_TIME = str(2)
 
 #In minutes 
 TEST_INTERVAL = 15
@@ -29,12 +30,17 @@ while (iterator != 50):
     print(output)
     print("----------\n\n")
 
+    speed = re.search('MBytes(.*)Mbits', str(output))
+    speed = speed.strip()
+    #print(speed.group(1))
+
+    print("Formated output:" + str(speed.group(1))) 
     with open("internet_log.txt", "a") as myfile:
         myfile.write(str(now))
 
         myfile.write('\n')
 
-        myfile.write(str(output))
+        myfile.write(str(speed.group(1)))
 
         myfile.write('\n')
 
@@ -44,4 +50,5 @@ while (iterator != 50):
         myfile.write('\n')
 
 
-    time.sleep(60*TIME_INTERVAL)
+
+    time.sleep(60*TEST_INTERVAL)
