@@ -31,16 +31,16 @@ while (iterator != 50):
     print("----------\n\n")
 
     speed = re.search('MBytes(.*)Mbits', str(output))
-    speed = speed.strip()
+    speed = str(speed.group(1)).strip()
     #print(speed.group(1))
 
-    print("Formated output:" + str(speed.group(1))) 
+    print("Formated output:" + speed) 
     with open("internet_log.txt", "a") as myfile:
         myfile.write(str(now))
 
         myfile.write('\n')
 
-        myfile.write(str(speed.group(1)))
+        myfile.write(speed)
 
         myfile.write('\n')
 
