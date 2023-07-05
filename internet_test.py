@@ -4,11 +4,11 @@ import subprocess
 import time
 import re
 
-with open("internet_log.txt",'w') as file:
+with open("log_internet.txt",'w') as file:
     pass
 
 #iPerf server address
-IP_ADDR = ''
+IP_ADDR = '62.210.18.40'
 
 #In seconds
 TEST_TIME = str(2)
